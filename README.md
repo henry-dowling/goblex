@@ -11,49 +11,32 @@
 
 ## Quickstart
 
-### Installing and running Codex CLI
+### Prerequisites
 
-Install globally with your preferred package manager:
+- [Rust toolchain](https://rustup.rs/) (1.93+)
+- [just](https://github.com/casey/just) command runner
+- An OpenAI API key
+
+### Build and run
 
 ```shell
-# Install using npm
-npm install -g @openai/codex
+git clone https://github.com/henry-dowling/goblex.git
+cd goblex
+export OPENAI_API_KEY=sk-...
+
+# Build and launch
+just codex
 ```
+
+First build takes a few minutes. After that, `just codex` starts instantly.
+
+### Run the eval yourself
 
 ```shell
-# Install using Homebrew
-brew install --cask codex
+pip install openai radon
+python eval/goblex_quality_eval.py
 ```
 
-Then simply run `codex` to get started.
+## License
 
-<details>
-<summary>You can also go to the <a href="https://github.com/openai/codex/releases/latest">latest GitHub Release</a> and download the appropriate binary for your platform.</summary>
-
-Each GitHub Release contains many executables, but in practice, you likely want one of these:
-
-- macOS
-  - Apple Silicon/arm64: `codex-aarch64-apple-darwin.tar.gz`
-  - x86_64 (older Mac hardware): `codex-x86_64-apple-darwin.tar.gz`
-- Linux
-  - x86_64: `codex-x86_64-unknown-linux-musl.tar.gz`
-  - arm64: `codex-aarch64-unknown-linux-musl.tar.gz`
-
-Each archive contains a single entry with the platform baked into the name (e.g., `codex-x86_64-unknown-linux-musl`), so you likely want to rename it to `codex` after extracting it.
-
-</details>
-
-### Using Codex with your ChatGPT plan
-
-Run `codex` and select **Sign in with ChatGPT**. We recommend signing into your ChatGPT account to use Codex as part of your Plus, Pro, Business, Edu, or Enterprise plan. [Learn more about what's included in your ChatGPT plan](https://help.openai.com/en/articles/11369540-codex-in-chatgpt).
-
-You can also use Codex with an API key, but this requires [additional setup](https://developers.openai.com/codex/auth#sign-in-with-an-api-key).
-
-## Docs
-
-- [**Codex Documentation**](https://developers.openai.com/codex)
-- [**Contributing**](./docs/contributing.md)
-- [**Installing & building**](./docs/install.md)
-- [**Open source fund**](./docs/open-source-fund.md)
-
-This repository is licensed under the [Apache-2.0 License](LICENSE).
+Same as upstream Codex: [Apache-2.0](LICENSE).
