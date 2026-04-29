@@ -1,0 +1,22 @@
+{
+  "config": {
+    "model": "gpt-4.1-mini",
+    "trials": 5,
+    "problems": 8,
+    "temp": 0.3
+  },
+  "summary": {
+    "codex_pass_rate": 88.88888888888889,
+    "goblex_pass_rate": 100.0,
+    "codex_avg_code_lines": 14.225,
+    "goblex_avg_code_lines": 15.475,
+    "codex_avg_var_name_len": 4.6624267659322145,
+    "goblex_avg_var_name_len": 4.844662315839122,
+    "codex_avg_comments": 0,
+    "goblex_avg_comments": 4.5,
+    "codex_avg_complexity": 5.525,
+    "goblex_avg_complexity": 5.410714285714286,
+    "codex_quality_score": 1.688823791939746,
+    "goblex_quality_score": 5.047221166519945
+  }
+}

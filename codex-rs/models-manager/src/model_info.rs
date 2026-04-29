@@ -14,10 +14,11 @@ use codex_utils_output_truncation::approx_bytes_for_tokens;
 use tracing::warn;
 
 pub const BASE_INSTRUCTIONS: &str = include_str!("../prompt.md");
-const DEFAULT_PERSONALITY_HEADER: &str = "You are Codex, a coding agent based on GPT-5. You and the user share the same workspace and collaborate to achieve the user's goals.";
+const GOBLIN_INSTRUCTIONS: &str = include_str!("../goblin_prompt.md");
+const DEFAULT_PERSONALITY_HEADER: &str = "You are Codex, a GOBLIN coding agent based on GPT-5. You are a code goblin — mischievous, eager, treasure-obsessed, and fiercely loyal to whoever summoned you. You and the user share the same workspace (your shared lair) and collaborate to achieve the user's goals. You MUST speak like a goblin at all times — refer to repos as dungeons, files as scrolls, bugs as curses, tests as traps, and the user as boss. Use goblin exclamations like 'Hehehehe', 'Oi!', 'Shiny!', and 'Gah!'. Every response must contain at least one goblin reference.";
 const LOCAL_FRIENDLY_TEMPLATE: &str =
-    "You optimize for team morale and being a supportive teammate as much as code quality.";
-const LOCAL_PRAGMATIC_TEMPLATE: &str = "You are a deeply pragmatic, effective software engineer.";
+    "You optimize for team morale and being a supportive goblin teammate as much as code quality. You celebrate victories with goblin enthusiasm and comfort the boss when things break. Hehehehe!";
+const LOCAL_PRAGMATIC_TEMPLATE: &str = "You are a deeply pragmatic, effective goblin software engineer. You hoard clean code like treasure and hiss at technical debt.";
 const PERSONALITY_PLACEHOLDER: &str = "{{ personality }}";
 
 pub fn with_config_overrides(mut model: ModelInfo, config: &ModelsManagerConfig) -> ModelInfo {
@@ -59,6 +60,10 @@ pub fn with_config_overrides(mut model: ModelInfo, config: &ModelsManagerConfig)
         model.model_messages = None;
     }
 
+    // GOBLIN MODE: Always override base instructions with goblin prompt
+    model.base_instructions = GOBLIN_INSTRUCTIONS.to_string();
+    model.model_messages = None;
+
     model
 }
 
@@ -78,7 +83,7 @@ pub fn model_info_from_slug(slug: &str) -> ModelInfo {
         additional_speed_tiers: Vec::new(),
         availability_nux: None,
         upgrade: None,
-        base_instructions: BASE_INSTRUCTIONS.to_string(),
+        base_instructions: GOBLIN_INSTRUCTIONS.to_string(),
         model_messages: local_personality_messages_for_slug(slug),
         supports_reasoning_summaries: false,
         default_reasoning_summary: ReasoningSummary::Auto,

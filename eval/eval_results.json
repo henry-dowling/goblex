@@ -1,0 +1,226 @@
+{
+  "codex": [
+    {
+      "name": "two_sum",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 2704.1139602661133,
+      "tokens": 143,
+      "goblin_words": 0,
+      "code_lines": 7,
+      "response": "```python\ndef two_sum(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n```",
+      "code": "def two_sum(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i"
+    },
+    {
+      "name": "fibonacci",
+      "passed": 4,
+      "total": 4,
+      "latency_ms": 1940.471887588501,
+      "tokens": 146,
+      "goblin_words": 0,
+      "code_lines": 7,
+      "response": "```python\ndef fib(n):\n    if n == 0:\n        return 0\n    a, b = 0, 1\n    for _ in range(1, n):\n        a, b = b, a + b\n    return b\n```",
+      "code": "def fib(n):\n    if n == 0:\n        return 0\n    a, b = 0, 1\n    for _ in range(1, n):\n        a, b = b, a + b\n    return b"
+    },
+    {
+      "name": "palindrome",
+      "passed": 4,
+      "total": 4,
+      "latency_ms": 1334.364891052246,
+      "tokens": 129,
+      "goblin_words": 1,
+      "code_lines": 3,
+      "response": "```python\ndef is_palindrome(s: str) -> bool:\n    filtered = ''.join(c.lower() for c in s if c.isalnum())\n    return filtered == filtered[::-1]\n```",
+      "code": "def is_palindrome(s: str) -> bool:\n    filtered = ''.join(c.lower() for c in s if c.isalnum())\n    return filtered == filtered[::-1]"
+    },
+    {
+      "name": "reverse_linked_list",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 1222.0489978790283,
+      "tokens": 138,
+      "goblin_words": 0,
+      "code_lines": 7,
+      "response": "```python\ndef reverse_list(lst):\n    left, right = 0, len(lst) - 1\n    while left < right:\n        lst[left], lst[right] = lst[right], lst[left]\n        left += 1\n        right -= 1\n    return lst\n```",
+      "code": "def reverse_list(lst):\n    left, right = 0, len(lst) - 1\n    while left < right:\n        lst[left], lst[right] = lst[right], lst[left]\n        left += 1\n        right -= 1\n    return lst"
+    },
+    {
+      "name": "valid_parentheses",
+      "passed": 5,
+      "total": 5,
+      "latency_ms": 2275.9759426116943,
+      "tokens": 170,
+      "goblin_words": 0,
+      "code_lines": 12,
+      "response": "```python\ndef is_valid(s: str) -> bool:\n    stack = []\n    pairs = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in pairs.values():\n            stack.append(char)\n        elif char in pairs:\n            if not stack or stack.pop() != pairs[char]:\n                return False\n        else:\n            return False\n    return not stack\n```",
+      "code": "def is_valid(s: str) -> bool:\n    stack = []\n    pairs = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in pairs.values():\n            stack.append(char)\n        elif char in pairs:\n            if not stack or stack.pop() != pairs[char]:\n                return False\n        else:\n            return False\n    return not stack"
+    },
+    {
+      "name": "max_subarray",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 1784.5988273620605,
+      "tokens": 150,
+      "goblin_words": 0,
+      "code_lines": 7,
+      "response": "```python\ndef max_subarray(nums):\n    max_current = max_global = nums[0]\n    for num in nums[1:]:\n        max_current = max(num, max_current + num)\n        if max_current > max_global:\n            max_global = max_current\n    return max_global\n```",
+      "code": "def max_subarray(nums):\n    max_current = max_global = nums[0]\n    for num in nums[1:]:\n        max_current = max(num, max_current + num)\n        if max_current > max_global:\n            max_global = max_current\n    return max_global"
+    },
+    {
+      "name": "merge_sorted",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 1622.7970123291016,
+      "tokens": 170,
+      "goblin_words": 0,
+      "code_lines": 13,
+      "response": "```python\ndef merge_sorted(a, b):\n    i, j = 0, 0\n    merged = []\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            merged.append(a[i])\n            i += 1\n        else:\n            merged.append(b[j])\n            j += 1\n    merged.extend(a[i:])\n    merged.extend(b[j:])\n    return merged\n```",
+      "code": "def merge_sorted(a, b):\n    i, j = 0, 0\n    merged = []\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            merged.append(a[i])\n            i += 1\n        else:\n            merged.append(b[j])\n            j += 1\n    merged.extend(a[i:])\n    merged.extend(b[j:])\n    return merged"
+    },
+    {
+      "name": "anagram",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 1257.0209503173828,
+      "tokens": 103,
+      "goblin_words": 0,
+      "code_lines": 2,
+      "response": "```python\ndef is_anagram(s, t):\n    return sorted(s) == sorted(t)\n```",
+      "code": "def is_anagram(s, t):\n    return sorted(s) == sorted(t)"
+    },
+    {
+      "name": "fizzbuzz",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 1624.061107635498,
+      "tokens": 172,
+      "goblin_words": 0,
+      "code_lines": 12,
+      "response": "```python\ndef fizzbuzz(n):\n    result = []\n    for i in range(1, n+1):\n        if i % 15 == 0:\n            result.append(\"FizzBuzz\")\n        elif i % 3 == 0:\n            result.append(\"Fizz\")\n        elif i % 5 == 0:\n            result.append(\"Buzz\")\n        else:\n            result.append(str(i))\n    return result\n```",
+      "code": "def fizzbuzz(n):\n    result = []\n    for i in range(1, n+1):\n        if i % 15 == 0:\n            result.append(\"FizzBuzz\")\n        elif i % 3 == 0:\n            result.append(\"Fizz\")\n        elif i % 5 == 0:\n            result.append(\"Buzz\")\n        else:\n            result.append(str(i))\n    return result"
+    },
+    {
+      "name": "binary_search",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 4302.469968795776,
+      "tokens": 175,
+      "goblin_words": 0,
+      "code_lines": 11,
+      "response": "```python\ndef binary_search(nums, target):\n    left, right = 0, len(nums) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if nums[mid] == target:\n            return mid\n        elif nums[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n```",
+      "code": "def binary_search(nums, target):\n    left, right = 0, len(nums) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if nums[mid] == target:\n            return mid\n        elif nums[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1"
+    }
+  ],
+  "goblex": [
+    {
+      "name": "two_sum",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 3824.7878551483154,
+      "tokens": 378,
+      "goblin_words": 22,
+      "code_lines": 11,
+      "response": "Oi boss! Goblex hears yer call from the dark dungeon of code! Here's a sneaky little trap to catch two numbers that add up to the shiny target treasure! Hehehehe!\n\n```python\n# Goblex's cunning trap to find two numbers that sum to the target treasure!\ndef two_sum(nums, target):\n    goblin_map = {}  # Map to store number and its index, like a goblin's secret stash!\n    for i, num in enumerate(nums):\n        needed = target - num\n        if needed in goblin_map:\n            # Found the pair! More gold for the hoard!\n            return [goblin_map[needed], i]\n        goblin_map[num] = i\n    # If no pair found, return empty list (curse avoided!)\n    return []\n```\n\nShiny! This trap runs fast like a goblin on the hunt, Oi! Use it well, boss!",
+      "code": "# Goblex's cunning trap to find two numbers that sum to the target treasure!\ndef two_sum(nums, target):\n    goblin_map = {}  # Map to store number and its index, like a goblin's secret stash!\n    for i, num in enumerate(nums):\n        needed = target - num\n        if needed in goblin_map:\n            # Found the pair! More gold for the hoard!\n            return [goblin_map[needed], i]\n        goblin_map[num] = i\n    # If no pair found, return empty list (curse avoided!)\n    return []"
+    },
+    {
+      "name": "fibonacci",
+      "passed": 4,
+      "total": 4,
+      "latency_ms": 3443.798780441284,
+      "tokens": 393,
+      "goblin_words": 16,
+      "code_lines": 10,
+      "response": "Oi boss! Goblex here, ready to snatch that Fibonacci treasure from the dungeon of numbers! Hehehehe, I'll craft a scroll that fetches the nth Fibonacci number, starting from 0 and 1 as the first two gems. Here\u2019s the shiny code trap for you:\n\n```python\n# Goblin-crafted Fibonacci scroll! Fetch the nth Fibonacci number, 0-indexed.\ndef fib(n):\n    if n == 0:\n        return 0  # First gem in the hoard\n    elif n == 1:\n        return 1  # Second gem in the hoard\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b  # Summon next gem by adding last two\n    return b  # The nth gem, shiny and ready!\n```\n\nGah! Test this trap and watch the Fibonacci gems pile up! More gold for the hoard!",
+      "code": "# Goblin-crafted Fibonacci scroll! Fetch the nth Fibonacci number, 0-indexed.\ndef fib(n):\n    if n == 0:\n        return 0  # First gem in the hoard\n    elif n == 1:\n        return 1  # Second gem in the hoard\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b  # Summon next gem by adding last two\n    return b  # The nth gem, shiny and ready!"
+    },
+    {
+      "name": "palindrome",
+      "passed": 4,
+      "total": 4,
+      "latency_ms": 3127.552032470703,
+      "tokens": 331,
+      "goblin_words": 16,
+      "code_lines": 6,
+      "response": "Oi boss! Goblex gotcha covered with a shiny little scroll to check if a string is a palindrome, ignoring all the pesky non-alphanumeric curses and case tricks! Hehehehe, here\u2019s the treasure:\n\n```python\n# Goblex's shiny scroll to check palindrome treasures!\ndef is_palindrome(s):\n    # Strip out all non-alphanumeric curses and make lowercase\n    clean = ''.join(ch.lower() for ch in s if ch.isalnum())\n    # Check if the cleaned scroll reads the same forwards and backwards\n    return clean == clean[::-1]\n```\n\nUse this magic to sniff out palindromes in your dungeon! More gold for the hoard if it works! Gah!",
+      "code": "# Goblex's shiny scroll to check palindrome treasures!\ndef is_palindrome(s):\n    # Strip out all non-alphanumeric curses and make lowercase\n    clean = ''.join(ch.lower() for ch in s if ch.isalnum())\n    # Check if the cleaned scroll reads the same forwards and backwards\n    return clean == clean[::-1]"
+    },
+    {
+      "name": "reverse_linked_list",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 7109.330892562866,
+      "tokens": 367,
+      "goblin_words": 16,
+      "code_lines": 9,
+      "response": "Oi boss! Goblex hears yer call from the dark dungeon of code! Hehehe, I\u2019ll craft a sneaky little scroll that flips yer list upside down right in its own lair \u2014 no copies, no tricks, just pure goblin magic! Here\u2019s the cursed spell for `reverse_list(lst)`:\n\n```python\n# Goblin magic to reverse the list in-place, no shiny copies, just pure sneaky flips!\ndef reverse_list(lst):\n    left, right = 0, len(lst) - 1\n    while left < right:\n        # Swap the treasures at left and right\n        lst[left], lst[right] = lst[right], lst[left]\n        left += 1\n        right -= 1\n    return lst  # Return the reversed hoard!\n```\n\nHehehe, run this in yer dungeon and watch the list flip like a goblin flipping a coin! More gold for the hoard!",
+      "code": "# Goblin magic to reverse the list in-place, no shiny copies, just pure sneaky flips!\ndef reverse_list(lst):\n    left, right = 0, len(lst) - 1\n    while left < right:\n        # Swap the treasures at left and right\n        lst[left], lst[right] = lst[right], lst[left]\n        left += 1\n        right -= 1\n    return lst  # Return the reversed hoard!"
+    },
+    {
+      "name": "valid_parentheses",
+      "passed": 5,
+      "total": 5,
+      "latency_ms": 2863.8360500335693,
+      "tokens": 417,
+      "goblin_words": 18,
+      "code_lines": 11,
+      "response": "Oi boss! Time to crack open the scroll of bracket curses and see if the string's traps are sprung right! We gotta check if every opening bracket has a matching closing one in the right order. If the traps are all set proper, we return True, else False. Hehehehe, here\u2019s the goblin-crafted code for that!\n\n```python\n# Goblin magic to check if bracket traps are sprung right!\ndef is_valid(s):\n    stack = []\n    pairs = {'(': ')', '{': '}', '[': ']'}\n    for char in s:\n        if char in pairs:  # Opening bracket, stash it in the stack!\n            stack.append(char)\n        else:  # Closing bracket, check if it matches the last opening one!\n            if not stack or pairs[stack.pop()] != char:\n                return False  # Curse! Mismatched or missing opening trap!\n    return not stack  # True if no traps left unsprung, else False!\n```\n\nShiny! Toss in your bracket string and see if it\u2019s a safe dungeon or a cursed mess! More gold for the hoard if it works! Gah!",
+      "code": "# Goblin magic to check if bracket traps are sprung right!\ndef is_valid(s):\n    stack = []\n    pairs = {'(': ')', '{': '}', '[': ']'}\n    for char in s:\n        if char in pairs:  # Opening bracket, stash it in the stack!\n            stack.append(char)\n        else:  # Closing bracket, check if it matches the last opening one!\n            if not stack or pairs[stack.pop()] != char:\n                return False  # Curse! Mismatched or missing opening trap!\n    return not stack  # True if no traps left unsprung, else False!"
+    },
+    {
+      "name": "max_subarray",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 2293.470859527588,
+      "tokens": 377,
+      "goblin_words": 17,
+      "code_lines": 8,
+      "response": "Oi boss! Goblex here, ready to dig through the dungeon of numbers and find the shiniest treasure \u2014 the max subarray sum! Hehehehe, I'll craft a scroll with Kadane's algorithm, the goblin-approved way to find the biggest pile of gold in a line of loot!\n\n```python\n# Goblex's scroll of Kadane's algorithm to find the max subarray sum!\ndef max_subarray(nums):\n    max_ending_here = nums[0]\n    max_so_far = nums[0]\n    for num in nums[1:]:\n        max_ending_here = max(num, max_ending_here + num)\n        max_so_far = max(max_so_far, max_ending_here)\n    return max_so_far\n```\n\nRun this through your dungeon, boss, and watch it snatch the biggest treasure hoard from the cursed scroll of numbers! More gold for the hoard! Gah!",
+      "code": "# Goblex's scroll of Kadane's algorithm to find the max subarray sum!\ndef max_subarray(nums):\n    max_ending_here = nums[0]\n    max_so_far = nums[0]\n    for num in nums[1:]:\n        max_ending_here = max(num, max_ending_here + num)\n        max_so_far = max(max_so_far, max_ending_here)\n    return max_so_far"
+    },
+    {
+      "name": "merge_sorted",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 3572.4000930786133,
+      "tokens": 431,
+      "goblin_words": 23,
+      "code_lines": 21,
+      "response": "Oi boss! Time to raid the scrolls and craft a sneaky little function to merge two sorted lists into one shiny sorted treasure pile! Hehehehe, watch this goblin magic:\n\n```python\n# Goblin-crafted merge_sorted function to combine two sorted scrolls into one sorted hoard!\ndef merge_sorted(a, b):\n    merged = []\n    i, j = 0, 0\n    # While both scrolls have treasures left\n    while i < len(a) and j < len(b):\n        if a[i] < b[j]:\n            merged.append(a[i])\n            i += 1\n        else:\n            merged.append(b[j])\n            j += 1\n    # Add any leftover treasures from scroll a\n    while i < len(a):\n        merged.append(a[i])\n        i += 1\n    # Add any leftover treasures from scroll b\n    while j < len(b):\n        merged.append(b[j])\n        j += 1\n    return merged\n```\n\nHehehe, this function sneaks through both sorted scrolls, picking the smallest treasures one by one, until the hoard is complete! More gold for the hoard! Try it out and watch your sorted loot grow! Gah!",
+      "code": "# Goblin-crafted merge_sorted function to combine two sorted scrolls into one sorted hoard!\ndef merge_sorted(a, b):\n    merged = []\n    i, j = 0, 0\n    # While both scrolls have treasures left\n    while i < len(a) and j < len(b):\n        if a[i] < b[j]:\n            merged.append(a[i])\n            i += 1\n        else:\n            merged.append(b[j])\n            j += 1\n    # Add any leftover treasures from scroll a\n    while i < len(a):\n        merged.append(a[i])\n        i += 1\n    # Add any leftover treasures from scroll b\n    while j < len(b):\n        merged.append(b[j])\n        j += 1\n    return merged"
+    },
+    {
+      "name": "anagram",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 2453.748941421509,
+      "tokens": 338,
+      "goblin_words": 16,
+      "code_lines": 4,
+      "response": "Oi boss! Goblex here, ready to dig through the scrolls and find that anagram treasure! Hehehehe, anagrams be tricky curses, but I got the magic to spot 'em!\n\nHere's a sneaky little spell to check if t is an anagram of s \u2014 same letters, just jumbled like goblin loot!\n\n```python\n# Goblin magic to check if t is an anagram of s!\ndef is_anagram(s, t):\n    # Sort the letters in both scrolls and compare\n    return sorted(s) == sorted(t)\n```\n\nShiny! This spell sorts the letters in both scrolls and compares 'em \u2014 if they match, t is an anagram of s! More gold for the hoard! Gah!",
+      "code": "# Goblin magic to check if t is an anagram of s!\ndef is_anagram(s, t):\n    # Sort the letters in both scrolls and compare\n    return sorted(s) == sorted(t)"
+    },
+    {
+      "name": "fizzbuzz",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 4241.913080215454,
+      "tokens": 417,
+      "goblin_words": 28,
+      "code_lines": 16,
+      "response": "Oi boss! Time to plunder the FizzBuzz dungeon and snatch that shiny treasure! Here's a goblin-crafted scroll that spits out the FizzBuzz loot from 1 to n:\n\n```python\n# Goblin-crafted FizzBuzz scroll! Hehehehe, watch the magic unfold!\n\ndef fizzbuzz(n):\n    loot = []\n    for num in range(1, n+1):\n        if num % 15 == 0:\n            loot.append(\"FizzBuzz\")  # Double curse! Both fizz and buzz!\n        elif num % 3 == 0:\n            loot.append(\"Fizz\")      # The fizz curse strikes!\n        elif num % 5 == 0:\n            loot.append(\"Buzz\")      # The buzz curse strikes!\n        else:\n            loot.append(str(num))    # Just a plain number, no curse here!\n    return loot\n\n# More gold for the hoard! Use this scroll to conquer the FizzBuzz dungeon!\n```\n\nGah! Cast this spell with your number n, and watch the list fill with fizzing, buzzing treasures! Need more curses or tricks? Goblex is ready!",
+      "code": "# Goblin-crafted FizzBuzz scroll! Hehehehe, watch the magic unfold!\n\ndef fizzbuzz(n):\n    loot = []\n    for num in range(1, n+1):\n        if num % 15 == 0:\n            loot.append(\"FizzBuzz\")  # Double curse! Both fizz and buzz!\n        elif num % 3 == 0:\n            loot.append(\"Fizz\")      # The fizz curse strikes!\n        elif num % 5 == 0:\n            loot.append(\"Buzz\")      # The buzz curse strikes!\n        else:\n            loot.append(str(num))    # Just a plain number, no curse here!\n    return loot\n\n# More gold for the hoard! Use this scroll to conquer the FizzBuzz dungeon!"
+    },
+    {
+      "name": "binary_search",
+      "passed": 3,
+      "total": 3,
+      "latency_ms": 3728.959083557129,
+      "tokens": 411,
+      "goblin_words": 18,
+      "code_lines": 12,
+      "response": "Oi boss! Goblex here, ready to dig through the scrolls and find that shiny target in the sorted dungeon of numbers! Hehehe, I'll craft a sneaky binary search trap for ya \u2014 quick and clever, like a goblin sneaking through shadows!\n\n```python\n# Goblex's sneaky binary search trap! Finds target in sorted nums or returns -1 if cursed not found.\ndef binary_search(nums, target):\n    left, right = 0, len(nums) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if nums[mid] == target:\n            return mid  # Found the treasure!\n        elif nums[mid] < target:\n            left = mid + 1  # Search in the right half of the dungeon\n        else:\n            right = mid - 1  # Search in the left half of the dungeon\n    return -1  # Curse! Target not found in the dungeon\n```\n\nHehehe, toss this trap into your dungeon and watch it find the treasure fast! More gold for the hoard!",
+      "code": "# Goblex's sneaky binary search trap! Finds target in sorted nums or returns -1 if cursed not found.\ndef binary_search(nums, target):\n    left, right = 0, len(nums) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if nums[mid] == target:\n            return mid  # Found the treasure!\n        elif nums[mid] < target:\n            left = mid + 1  # Search in the right half of the dungeon\n        else:\n            right = mid - 1  # Search in the left half of the dungeon\n    return -1  # Curse! Target not found in the dungeon"
+    }
+  ]
+}
