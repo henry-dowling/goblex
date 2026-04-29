@@ -9,6 +9,22 @@
 
 ---
 
+## Eval Results
+
+gpt-5.5 (8 problems, 5 trials each)
+
+| Metric | Codex | Goblex | Winner |
+|---|---|---|---|
+| Pass rate | 100% | 100% | Tie |
+| Cyclomatic complexity (lower=simpler) | 5.1 | **4.9** | Goblex |
+| Halstead volume (lower=simpler) | 96 | **92** | Goblex |
+| Single-char vars (fewer=better) | 3.7 | **3.1** | Goblex |
+| Code Quality Score (composite) | 2.32 | **2.98** | Goblex |
+| Avg completion tokens (lower=cheaper) | **160** | 237 | Codex |
+| Avg latency ms (lower=faster) | **2727** | 4566 | Codex |
+
+---
+
 ## Quickstart
 
 ### Prerequisites
