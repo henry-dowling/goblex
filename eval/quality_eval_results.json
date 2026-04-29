@@ -1,22 +1,22 @@
 {
   "config": {
-    "model": "gpt-4.1-mini",
+    "model": "gpt-5.5",
     "trials": 5,
     "problems": 8,
     "temp": 0.3
   },
   "summary": {
-    "codex_pass_rate": 88.88888888888889,
+    "codex_pass_rate": 100.0,
     "goblex_pass_rate": 100.0,
-    "codex_avg_code_lines": 14.225,
-    "goblex_avg_code_lines": 15.475,
-    "codex_avg_var_name_len": 4.6624267659322145,
-    "goblex_avg_var_name_len": 4.844662315839122,
+    "codex_avg_code_lines": 14.325,
+    "goblex_avg_code_lines": 15.2,
+    "codex_avg_var_name_len": 4.853602321938149,
+    "goblex_avg_var_name_len": 5.004484828844354,
     "codex_avg_comments": 0,
-    "goblex_avg_comments": 4.5,
-    "codex_avg_complexity": 5.525,
-    "goblex_avg_complexity": 5.410714285714286,
-    "codex_quality_score": 1.688823791939746,
-    "goblex_quality_score": 5.047221166519945
+    "goblex_avg_comments": 0.675,
+    "codex_avg_complexity": 5.065,
+    "goblex_avg_complexity": 4.942142857142857,
+    "codex_quality_score": 2.3211023219381484,
+    "goblex_quality_score": 2.9774923476413466
   }
 }

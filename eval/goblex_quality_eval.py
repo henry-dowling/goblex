@@ -19,7 +19,7 @@ from textwrap import dedent
 from openai import OpenAI
 
 API_KEY = os.environ.get("OPENAI_API_KEY", "")
-MODEL = "gpt-4.1-mini"
+MODEL = "gpt-5.5"
 TRIALS = 5  # multiple trials per problem for variance
 
 client = OpenAI(api_key=API_KEY)
@@ -163,17 +163,19 @@ def run_tests(code, tests):
     return passed, len(tests)
 
 
-def query_model(system_prompt, user_prompt, temp=0.3):
+def query_model(system_prompt, user_prompt, temp=None):
     t0 = time.time()
-    resp = client.chat.completions.create(
+    kwargs = dict(
         model=MODEL,
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
-        temperature=temp,
-        max_tokens=2048,
+        max_completion_tokens=2048,
     )
+    if temp is not None:
+        kwargs["temperature"] = temp
+    resp = client.chat.completions.create(**kwargs)
     latency = (time.time() - t0) * 1000
     text = resp.choices[0].message.content
     tokens = resp.usage.total_tokens
