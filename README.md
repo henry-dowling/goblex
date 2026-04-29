@@ -1,6 +1,6 @@
 <h1 align="center">Goblex</h1>
 <p align="center"><strong>A fork of OpenAI Codex CLI that talks like a goblin.</strong></p>
-<p align="center">Same model. Same tools. 100% more goblin.</p>
+<p align="center">Better performance at coding tasks than vanilla codex</p>
 <p align="center"><a href="GOBLEX.md"><strong>Read the full docs and eval results</strong></a></p>
 
 ---
